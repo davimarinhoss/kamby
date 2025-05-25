@@ -1,0 +1,2520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W1 Consultoria: Planejamento Estratégico – Kamby S.A.</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        /* Cores (Mantidas do design original) */
+        --primary-color: #0d1b2a;
+        --secondary-color: #00cec9; /* Teal / Ciano */
+        --accent-color-dark-theme: #1e293b; /* Azul escuro acinzentado */
+        --bg-dark-primary: #0d1b2a; /* Azul muito escuro (quase preto) */
+        --bg-dark-secondary: #1c2a3a; /* Azul escuro um pouco mais claro */
+        --bg-light-primary: #ffffff;
+        --bg-light-secondary: #f3f4f6; /* Cinza bem claro */
+        --text-light-primary: #f3f4f6;
+        --text-light-secondary: #a0aec0;
+        --text-dark-primary: #1a202c;
+        --text-dark-secondary: #4a5568;
+        --border-color-dark: #334155;
+        --border-color-light: #e2e8f0;
+
+        /* Sombras (Mantidas do design original) */
+        --card-shadow-dark: 0 4px 15px rgba(0, 0, 0, 0.2);
+        --card-shadow-light: 0 8px 20px rgba(0, 0, 0, 0.07);
+        --card-shadow-hover-light: 0 12px 28px rgba(0, 0, 0, 0.12),
+          0 5px 10px rgba(0, 0, 0, 0.1);
+        --card-shadow-hover-dark: 0 8px 25px rgba(0, 206, 201, 0.15),
+          0 4px 10px rgba(0, 206, 201, 0.1);
+
+        /* Fontes (Mantidas do design original) */
+        --font-primary: "Montserrat", "Segoe UI", Roboto, "Helvetica Neue",
+          Arial, sans-serif;
+        --font-secondary: "Lato", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-secondary);
+        line-height: 1.6;
+        color: var(--text-light-primary);
+        background-color: var(--bg-dark-primary);
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Ensure container uses available width */
+      }
+
+      section {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 20px;
+        position: relative;
+        text-align: center;
+        background-color: var(--bg-dark-primary);
+        color: var(--text-light-primary);
+        border-bottom: 1px solid var(--border-color-dark);
+        overflow: hidden;
+      }
+
+      section.light-section {
+        background-color: var(--bg-light-primary);
+        color: var(--text-dark-primary);
+        border-bottom: 1px solid var(--border-color-light);
+      }
+      section.light-gray-section {
+        background-color: var(--bg-light-secondary);
+        color: var(--text-dark-primary);
+        border-bottom: 1px solid var(--border-color-light);
+      }
+      section:last-of-type {
+        /* Remove border from the very last section */
+        border-bottom: none;
+      }
+
+      /* --- Estilos da Capa (Slide 1) --- */
+      .capa-section {
+        background-color: var(--primary-color);
+        color: var(--text-light-primary);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding-bottom: 60px;
+        border-bottom: none; /* Capa slide specifically has no bottom border */
+      }
+      .capa-content {
+        position: relative;
+        z-index: 2;
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo-container-capa {
+        margin-bottom: 35px;
+      }
+      .logo-shape-capa {
+        width: 110px;
+        height: 110px;
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 206, 201, 0.1);
+        border: 2px solid var(--secondary-color);
+        border-radius: 22px;
+        transform: rotate(45deg);
+        box-shadow: 0 0 20px rgba(0, 206, 201, 0.25);
+      }
+      .logo-text-capa {
+        font-family: var(--font-primary);
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--text-light-primary);
+        z-index: 2;
+        transform: rotate(-45deg);
+      }
+      .logo-text-capa span {
+        color: var(--secondary-color);
+      }
+      .capa-slide-title {
+        font-family: var(--font-primary);
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.3;
+        color: var(--text-light-primary);
+      }
+      .capa-slide-title .highlight {
+        color: var(--secondary-color);
+      }
+      .capa-details {
+        font-family: var(--font-secondary);
+        font-size: 1.2rem;
+        color: var(--text-light-secondary);
+        margin-bottom: 35px;
+      }
+
+      /* Estilos para "Sectional Cover Slides" */
+      .sectional-cover-slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: var(--bg-dark-secondary);
+        min-height: 100vh;
+      }
+      .sectional-cover-slide .container {
+        align-items: center;
+      }
+      .sectional-cover-title {
+        font-family: var(--font-primary);
+        font-size: 3.2rem;
+        font-weight: 700;
+        color: var(--text-light-primary);
+        margin-bottom: 20px;
+        line-height: 1.2;
+        border-bottom: 4px solid var(--secondary-color);
+        padding-bottom: 15px;
+        display: inline-block;
+      }
+      .kamby-logo-container {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      .kamby-logo-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid var(--secondary-color);
+        box-shadow: 0 0 20px rgba(0, 206, 201, 0.4);
+        object-fit: cover;
+      }
+      .kamby-company-name {
+        font-family: var(--font-secondary);
+        font-size: 1rem;
+        color: var(--text-light-secondary);
+        margin-top: 12px;
+        font-weight: 500;
+      }
+
+      /* --- Títulos Padrão de Seção (para slides de conteúdo) --- */
+      h2.section-title {
+        font-family: var(--font-primary);
+        font-size: 2.6rem;
+        font-weight: 300;
+        color: var(--text-light-primary);
+        position: relative;
+        padding-bottom: 20px;
+        text-align: center;
+        width: fit-content;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+      }
+      h2.section-title.on-light-bg {
+        color: var(--text-dark-primary);
+      }
+      h2.section-title::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 80px;
+        height: 4px;
+        background-color: var(--secondary-color);
+        border-radius: 2px;
+      }
+
+      /* Estilos para Listas Genéricas */
+      .list-section-content ul {
+        list-style: none;
+        padding: 0;
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      .list-section-content li {
+        background-color: var(--accent-color-dark-theme);
+        color: var(--text-light-primary);
+        padding: 18px 25px;
+        border-radius: 10px;
+        margin-bottom: 18px;
+        box-shadow: var(--card-shadow-dark);
+        font-size: 1.05rem;
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        border-left: 4px solid var(--secondary-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .list-section-content li::before {
+        content: "▸";
+        color: var(--secondary-color);
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 12px;
+        font-size: 1.1em;
+        line-height: 1.6;
+        flex-shrink: 0;
+      }
+      .list-section-content li > span {
+        flex-grow: 1;
+      }
+
+      section.light-section .list-section-content li,
+      section.light-gray-section .list-section-content li {
+        background-color: var(--bg-light-primary);
+        color: var(--text-dark-primary);
+        box-shadow: var(--card-shadow-light);
+      }
+      section.light-section .list-section-content li strong::before,
+      section.light-gray-section .list-section-content li strong::before {
+        content: none;
+      }
+
+      .list-section-content li:hover {
+        transform: translateY(-5px) scale(1.02);
+      }
+      section:not(.light-section):not(.light-gray-section)
+        .list-section-content
+        li:hover {
+        box-shadow: var(--card-shadow-hover-dark);
+      }
+      section.light-gray-section .list-section-content li:hover,
+      section.light-section .list-section-content li:hover {
+        box-shadow: var(--card-shadow-hover-light);
+      }
+      .list-section-content h3 {
+        font-family: var(--font-primary);
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--secondary-color);
+        margin-top: 30px;
+        margin-bottom: 15px;
+        text-align: left;
+      }
+      section.light-section .list-section-content h3,
+      section.light-gray-section .list-section-content h3 {
+        color: var(--primary-color);
+      }
+      .list-section-content .intro-paragraph {
+        font-size: 1.1rem;
+        color: var(--text-light-secondary);
+        margin-bottom: 25px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+      }
+      .list-section-content .intro-paragraph.centered {
+        text-align: center;
+      }
+      section.light-section .list-section-content .intro-paragraph,
+      section.light-gray-section .list-section-content .intro-paragraph {
+        color: var(--text-dark-secondary);
+      }
+      .risk-summary-paragraph {
+        font-size: 1.15rem;
+        color: var(--text-dark-secondary);
+        margin: 15px 0;
+        padding: 0 10%;
+        text-align: justify;
+        line-height: 1.8;
+      }
+
+      /* Styles for "Apresentação Institucional" slide (#kamby-final-slide-3) */
+      #kamby-final-slide-3 .container {
+        max-width: 1200px;
+      }
+      .institutional-content-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 40px;
+        width: 100%;
+        margin-top: 20px;
+      }
+      .institutional-text-content {
+        flex: 3;
+      }
+      .institutional-text-content .intro-paragraph {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: justify;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 1em;
+      }
+      .institutional-text-content .intro-paragraph:last-child {
+        margin-bottom: 0;
+      }
+
+      .institutional-logo-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 10px;
+      }
+      .kamby-rectangular-logo {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+        border: 3px solid var(--primary-color);
+        border-radius: 8px;
+        box-shadow: var(--card-shadow-light);
+      }
+      @media (max-width: 860px) {
+        .institutional-content-wrapper {
+          flex-direction: column;
+          align-items: center;
+        }
+        .institutional-text-content {
+          flex: none;
+          width: 100%;
+          margin-bottom: 30px;
+        }
+        .institutional-text-content .intro-paragraph {
+          text-align: left;
+        }
+        .institutional-logo-column {
+          flex: none;
+          width: 100%;
+          max-width: 200px;
+          padding-top: 0;
+        }
+      }
+
+      /* --- ESTILOS PARA ORGANOGRAMAS --- */
+      /* Organograma Societário (slide 7a / kamby-final-slide-10) */
+      .organogram-container {
+        text-align: center;
+        width: 100%;
+        max-width: 950px;
+        margin: 20px auto 0;
+      }
+      #kamby-final-slide-10 .organogram-container .node {
+        background-color: var(--bg-light-primary);
+        border: 2px solid var(--border-color-light);
+        color: var(--text-dark-primary);
+        padding: 12px 18px;
+        border-radius: 8px;
+        display: inline-block;
+        margin: 10px;
+        min-width: 200px;
+        max-width: 240px;
+        box-shadow: var(--card-shadow-light);
+        position: relative;
+        vertical-align: top;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      #kamby-final-slide-10 .organogram-container .node:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--card-shadow-hover-light);
+      }
+
+      #kamby-final-slide-10 .organogram-container .node.sa-node {
+        background-color: rgba(0, 206, 201, 0.2);
+        border-color: var(--secondary-color);
+        color: var(--primary-color);
+      }
+      #kamby-final-slide-10 .organogram-container .node.sa-node h4 {
+        color: var(--primary-color);
+      }
+      #kamby-final-slide-10 .organogram-container .node.sa-node p {
+        color: var(--primary-color);
+        opacity: 0.8;
+      }
+
+      #kamby-final-slide-10 .organogram-container .node.governance-assembly,
+      #kamby-final-slide-10 .organogram-container .node.governance-board,
+      #kamby-final-slide-10 .organogram-container .node.diretoria {
+        background-color: var(--accent-color-dark-theme);
+        border-color: var(--secondary-color);
+        color: var(--text-light-primary);
+      }
+      #kamby-final-slide-10 .organogram-container .node.governance-assembly h4,
+      #kamby-final-slide-10 .organogram-container .node.governance-board h4,
+      #kamby-final-slide-10 .organogram-container .node.diretoria h4 {
+        color: var(--secondary-color);
+      }
+      #kamby-final-slide-10 .organogram-container .node.governance-assembly p,
+      #kamby-final-slide-10 .organogram-container .node.governance-board p,
+      #kamby-final-slide-10 .organogram-container .node.diretoria p {
+        color: var(--text-light-secondary);
+      }
+      #kamby-final-slide-10 .organogram-container .node.shareholders-group {
+        background-color: rgba(0, 206, 201, 0.08);
+        border-color: var(--secondary-color);
+        color: var(--primary-color);
+      }
+      #kamby-final-slide-10 .organogram-container .node.shareholders-group h4 {
+        color: var(--primary-color);
+      }
+      #kamby-final-slide-10 .organogram-container .node.shareholders-group p,
+      #kamby-final-slide-10
+        .organogram-container
+        .node.shareholders-group
+        ul
+        li {
+        color: var(--text-dark-secondary);
+      }
+      #kamby-final-slide-10
+        .organogram-container
+        .node.shareholders-group
+        ul
+        li::before {
+        color: var(--primary-color);
+      }
+
+      #kamby-final-slide-10 .organogram-container .node.vesting-group {
+        background-color: var(--bg-light-primary);
+        border-color: var(--text-dark-secondary);
+        color: var(--text-dark-primary);
+      }
+      #kamby-final-slide-10 .organogram-container .node.vesting-group h4 {
+        color: var(--text-dark-primary);
+      }
+      #kamby-final-slide-10 .organogram-container .node.vesting-group p,
+      #kamby-final-slide-10 .organogram-container .node.vesting-group ul li {
+        color: var(--text-dark-secondary);
+      }
+      #kamby-final-slide-10
+        .organogram-container
+        .node.vesting-group
+        ul
+        li::before {
+        color: var(--text-dark-secondary);
+      }
+
+      #kamby-final-slide-10 .organogram-container .node h4 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 0.95em;
+      }
+      #kamby-final-slide-10 .organogram-container .node p {
+        margin-bottom: 4px;
+        font-size: 0.75em;
+        line-height: 1.3;
+      }
+      #kamby-final-slide-10 .organogram-container .node ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        text-align: left;
+        font-size: 0.75em;
+      }
+      #kamby-final-slide-10 .organogram-container .node ul li {
+        margin-bottom: 3px;
+        padding-left: 12px;
+        position: relative;
+        border-left: none;
+        background-color: transparent;
+        box-shadow: none;
+      }
+      #kamby-final-slide-10 .organogram-container .node ul li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        opacity: 0.7;
+        margin-right: 0;
+      }
+      #kamby-final-slide-10 .organogram-container .node ul li strong {
+        font-weight: 600;
+      }
+
+      .organogram-container .level {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .organogram-container .structure-group {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: 15px;
+      }
+      .organogram-container .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 10px;
+        flex: 1;
+        min-width: 240px;
+      }
+      .organogram-container .column-title {
+        font-size: 1em;
+        color: var(--text-dark-primary);
+        margin-bottom: 12px;
+        font-weight: 700;
+        font-family: var(--font-primary);
+      }
+      .organogram-container .connector {
+        width: 2px;
+        background-color: var(--secondary-color);
+        opacity: 0.8;
+        margin: 8px auto;
+      }
+      .organogram-container .connector.vertical-short {
+        height: 15px;
+      }
+      .organogram-container .connector.vertical-medium {
+        height: 25px;
+      }
+      .organogram-container .cnpj-text {
+        font-size: 0.7em;
+        color: var(--text-dark-secondary);
+        margin-top: 3px;
+      }
+      .organogram-container .node p.info-text {
+        font-size: 0.7em;
+        font-style: italic;
+        margin-top: 5px;
+        opacity: 0.8;
+      }
+      #kamby-final-slide-10 .organogram-container .node.sa-node p.info-text,
+      #kamby-final-slide-10
+        .organogram-container
+        .node.shareholders-group
+        p.info-text,
+      #kamby-final-slide-10
+        .organogram-container
+        .node.vesting-group
+        p.info-text {
+        color: var(--text-dark-secondary);
+      }
+      #kamby-final-slide-10
+        .organogram-container
+        .node.governance-assembly
+        p.info-text,
+      #kamby-final-slide-10
+        .organogram-container
+        .node.governance-board
+        p.info-text,
+      #kamby-final-slide-10 .organogram-container .node.diretoria p.info-text {
+        color: var(--text-light-secondary);
+      }
+
+      .gantt-chart-wrapper {
+        width: 100%;
+        padding: 10px 0;
+        overflow-x: auto;
+      }
+      .gantt-container-inner {
+        width: 100%;
+        border: 1px solid var(--border-color-light);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow-light);
+        background-color: var(--bg-light-primary);
+        margin: 0 auto;
+      }
+      .gantt-header {
+        display: grid;
+        grid-template-columns: 2.5fr repeat(8, 1fr);
+        background-color: var(--bg-light-secondary);
+        color: var(--text-dark-primary);
+        font-weight: bold;
+        border-bottom: 1px solid var(--border-color-light);
+      }
+      .gantt-header > div {
+        padding: 10px 8px;
+        text-align: center;
+        border-right: 1px solid var(--border-color-light);
+        font-size: 0.85em;
+        font-family: var(--font-primary);
+      }
+      .gantt-header > div:last-child {
+        border-right: none;
+      }
+      .gantt-header .header-task {
+        text-align: left;
+        padding-left: 15px;
+        font-size: 0.9em;
+      }
+      .gantt-row {
+        display: grid;
+        grid-template-columns: 2.5fr repeat(8, 1fr);
+        border-bottom: 1px solid var(--border-color-light);
+      }
+      .gantt-row:last-child {
+        border-bottom: none;
+      }
+      .gantt-task-name {
+        padding: 8px 15px;
+        font-size: 0.8em;
+        color: var(--text-dark-secondary);
+        border-right: 1px solid var(--border-color-light);
+        display: flex;
+        align-items: center;
+      }
+      .gantt-phase-cell {
+        position: relative;
+        padding: 8px 5px;
+        border-right: 1px solid var(--border-color-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .gantt-phase-cell:last-child {
+        border-right: none;
+      }
+      .gantt-bar-container {
+        width: 90%;
+        height: 18px;
+        background-color: #e0e0e0;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .gantt-bar {
+        height: 100%;
+        border-radius: 4px;
+        opacity: 0;
+      }
+      .bar-phase-1 {
+        width: 100%;
+        opacity: 1;
+        background-color: #a0d2db;
+      }
+      .bar-phase-2 {
+        width: 100%;
+        opacity: 1;
+        background-color: #80b9ad;
+      }
+      .bar-phase-3 {
+        width: 100%;
+        opacity: 1;
+        background-color: #76c7c0;
+      }
+      .bar-phase-4 {
+        width: 100%;
+        opacity: 1;
+        background-color: #5eaaa8;
+      }
+      .bar-phase-5 {
+        width: 100%;
+        opacity: 1;
+        background-color: #f3d5a5;
+      }
+      .bar-ongoing-support {
+        width: 100%;
+        opacity: 1;
+        background-color: #bcaaa4;
+      }
+
+      .styled-table {
+        width: 100%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+        text-align: left;
+      }
+      .light-gray-section .styled-table,
+      .light-section .styled-table {
+        background-color: var(--bg-light-primary);
+        color: var(--text-dark-primary);
+        box-shadow: var(--card-shadow-light);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .styled-table th,
+      .styled-table td {
+        padding: 12px 15px;
+        border: 1px solid var(--border-color-light);
+        vertical-align: top;
+      }
+      .light-gray-section .styled-table th,
+      .light-section .styled-table th {
+        background-color: var(--bg-light-secondary);
+        color: var(--primary-color);
+        font-family: var(--font-primary);
+        font-weight: 700;
+        font-size: 0.85em;
+        text-transform: uppercase;
+        border-bottom: 2px solid var(--secondary-color);
+        border-top: 1px solid var(--border-color-light);
+        border-left: 1px solid var(--border-color-light);
+        border-right: 1px solid var(--border-color-light);
+      }
+      .light-gray-section .styled-table td,
+      .light-section .styled-table td {
+        color: var(--text-dark-secondary);
+      }
+      .light-gray-section .styled-table tbody tr:nth-child(even),
+      .light-section .styled-table tbody tr:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+      .light-gray-section .styled-table tbody tr:hover,
+      .light-section .styled-table tbody tr:hover {
+        background-color: #e9ecef;
+      }
+      .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        margin-top: 20px;
+        border: 1px solid var(--border-color-light);
+        border-radius: 8px;
+        background-color: var(--bg-light-primary);
+      }
+
+      .investment-table-wrapper {
+        width: 100%;
+        max-width: 600px;
+        margin: 30px auto;
+      }
+      .investment-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: var(--accent-color-dark-theme);
+        color: var(--text-light-primary);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow-dark);
+        font-size: 1rem;
+      }
+      .investment-table th,
+      .investment-table td {
+        padding: 14px 20px;
+        border-bottom: 1px solid var(--border-color-dark);
+        text-align: left;
+      }
+      .investment-table th {
+        background-color: rgba(0, 0, 0, 0.25);
+        font-family: var(--font-primary);
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: var(--secondary-color);
+        text-transform: uppercase;
+      }
+      .investment-table td:last-child {
+        text-align: right;
+        font-weight: bold;
+        color: var(--text-light-primary);
+      }
+      .investment-table tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .investment-table tbody tr:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      .investment-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-light-secondary);
+        margin-bottom: 15px;
+      }
+      .payment-method-title {
+        font-size: 1.1rem;
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .investment-card-vista {
+        background-color: var(--accent-color-dark-theme);
+        color: var(--text-light-primary);
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: var(--card-shadow-dark);
+        text-align: center;
+        border: 1px solid var(--border-color-dark);
+        border-top: 4px solid var(--secondary-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        max-width: 500px;
+        margin: 20px auto;
+      }
+      .investment-card-vista:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--card-shadow-hover-dark);
+      }
+      .investment-card-vista h5 {
+        font-family: var(--font-primary);
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--text-light-primary);
+        margin-bottom: 10px;
+      }
+      .investment-card-vista .price {
+        font-family: var(--font-primary);
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--secondary-color);
+        margin-top: 10px;
+        display: block;
+      }
+
+      .final-message-text {
+        font-family: var(--font-secondary);
+        font-size: 1.7rem;
+        line-height: 1.7;
+        font-weight: 400;
+        max-width: 800px;
+        color: var(--text-light-primary);
+        text-align: center;
+        margin: 0 auto;
+      }
+      .final-message-text strong {
+        color: var(--secondary-color);
+        font-weight: 700;
+      }
+
+      .navigation {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+      }
+      .nav-dots {
+        list-style: none;
+        padding: 0;
+      }
+      .nav-dot {
+        margin: 8px 0;
+      }
+      .nav-link {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      .nav-link.on-light-bg-dot {
+        background-color: rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(0, 0, 0, 0.35);
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        transform: scale(1.3);
+        box-shadow: 0 0 8px var(--secondary-color);
+      }
+      .nav-tooltip {
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: var(--accent-color-dark-theme);
+        color: var(--text-light-primary);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease, right 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+      .nav-link.on-light-bg-dot .nav-tooltip {
+        background-color: var(--bg-light-primary);
+        color: var(--text-dark-primary);
+        border: 1px solid var(--border-color-light);
+      }
+      .nav-link:hover .nav-tooltip {
+        opacity: 1;
+        visibility: visible;
+        right: 30px;
+      }
+
+      .scroll-indicator-capa {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 3;
+        opacity: 0;
+      }
+      .mouse-capa {
+        width: 24px;
+        height: 38px;
+        border: 2px solid var(--text-light-secondary);
+        border-radius: 12px;
+        position: relative;
+        margin-bottom: 8px;
+      }
+      .mouse-wheel-capa {
+        position: absolute;
+        top: 6px;
+        left: 50%;
+        width: 3px;
+        height: 6px;
+        margin-left: -1.5px;
+        background-color: var(--text-light-secondary);
+        border-radius: 2px;
+        animation: scrollAnimCapa 1.8s ease-in-out infinite;
+      }
+      .scroll-text-capa {
+        font-size: 0.75rem;
+        color: var(--text-light-secondary);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      @keyframes scrollAnimCapa {
+        0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        60% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+      }
+      @keyframes fadeInCapaScrollIndicator {
+        from {
+          opacity: 0;
+          transform: translateX(-50%) translateY(10px);
+        }
+        to {
+          opacity: 0.8;
+          transform: translateX(-50%) translateY(0);
+        }
+      }
+
+      /* ... other styles ... */
+
+      .logo-only-slide {
+        background-color: var(--bg-dark-primary); /* #0e1b2a */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px; /* Provides a small margin around the very edges of the slide */
+        border-bottom: none; /* Ensure no border */
+      }
+      .logo-only-slide .container {
+        /* Ensure container doesn't restrict centering */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+      .logo-only-slide img {
+        max-width: 50vw; /* Logo can be up to 90% of the viewport width */
+        max-height: 50vh; /* Logo can be up to 80% of the viewport height */
+        width: auto; /* Actual width will be based on aspect ratio and constraints */
+        height: auto; /* Actual height will be based on aspect ratio and constraints */
+        object-fit: contain; /* Ensures the logo scales nicely while maintaining aspect ratio */
+      }
+
+      /* ... rest of the styles ... */
+
+      @media (max-width: 992px) {
+        section {
+          padding: 70px 15px;
+        }
+        h2.section-title {
+          font-size: 2.3rem;
+          margin-bottom: 50px;
+        }
+        .capa-slide-title {
+          font-size: 2.2rem;
+        }
+        .list-section-content li {
+          font-size: 1rem;
+        }
+        .organogram-container .structure-group,
+        .vesting-organogram .level,
+        .vesting-organogram .phases-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .organogram-container .column,
+        .vesting-organogram .node {
+          /*This might affect phase nodes too much if not overridden by flex properties */
+          margin-bottom: 20px;
+          width: 90%; /* This could be an issue for 4-in-a-row on medium screens */
+          max-width: 400px;
+        }
+        .vesting-organogram .phases-container .vesting-phase-node {
+          /* Ensure phase nodes have their own width logic */
+          width: 80%; /* Example for medium screens if they wrap */
+          min-width: 200px; /* Maintain a readable min-width when wrapped */
+          flex-basis: auto; /* Reset flex-basis if they wrap */
+        }
+        .gantt-chart-wrapper {
+          min-width: 700px;
+        }
+        .investment-table-wrapper {
+          max-width: 90%;
+        }
+        .investment-card-vista {
+          max-width: 90%;
+        }
+        .table-wrapper {
+          min-width: 700px;
+        }
+        .sectional-cover-title {
+          font-size: 2.8rem;
+        }
+      }
+      @media (max-width: 768px) {
+        section {
+          padding: 60px 10px;
+        }
+        h2.section-title {
+          font-size: 2rem;
+          margin-bottom: 40px;
+          padding-bottom: 15px;
+        }
+        h2.section-title::after {
+          width: 70px;
+          height: 3px;
+        }
+        .capa-slide-title {
+          font-size: 1.9rem;
+        }
+        .navigation {
+          display: none;
+        }
+        .list-section-content h3 {
+          font-size: 1.3rem;
+        }
+        .list-section-content .intro-paragraph {
+          font-size: 1rem;
+        }
+        .organogram-container .node,
+        .vesting-organogram .node {
+          min-width: 90%;
+          max-width: 90%;
+          padding: 10px 15px;
+        }
+        .vesting-organogram .phases-container .vesting-phase-node {
+          width: 90%;
+          min-width: unset;
+        }
+        .organogram-container .node h4,
+        .vesting-organogram .node h4 {
+          font-size: 0.9em;
+        }
+        .organogram-container .node p,
+        .vesting-organogram .node p {
+          font-size: 0.7em;
+        }
+        .organogram-container .node ul li,
+        .vesting-organogram .node ul li {
+          font-size: 0.7em;
+        }
+        .gantt-header {
+          font-size: 0.8em;
+        }
+        .gantt-task-name {
+          font-size: 0.75em;
+        }
+        .investment-table th,
+        .investment-table td {
+          padding: 10px 15px;
+          font-size: 0.9rem;
+        }
+        .investment-card-vista h5 {
+          font-size: 1.2rem;
+        }
+        .investment-card-vista .price {
+          font-size: 2.2rem;
+        }
+        .styled-table {
+          font-size: 0.8rem;
+        }
+        .styled-table th,
+        .styled-table td {
+          padding: 8px 10px;
+        }
+        .final-message-text {
+          font-size: 1.4rem;
+        }
+        .sectional-cover-title {
+          font-size: 2.2rem;
+        }
+      }
+      @media (max-width: 480px) {
+        h2.section-title {
+          font-size: 1.8rem;
+          margin-bottom: 35px;
+        }
+        .capa-slide-title {
+          font-size: 1.7rem;
+          text-align: center;
+        }
+        .list-section-content li {
+          font-size: 0.9rem;
+          padding: 15px 20px;
+        }
+        .list-section-content h3 {
+          font-size: 1.2rem;
+        }
+        .investment-table th,
+        .investment-table td {
+          font-size: 0.85rem;
+        }
+        .investment-card-vista h5 {
+          font-size: 1.1rem;
+        }
+        .investment-card-vista .price {
+          font-size: 2rem;
+        }
+        .styled-table {
+          font-size: 0.75rem;
+        }
+        .final-message-text {
+          font-size: 1.2rem;
+        }
+        .sectional-cover-title {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul class="nav-dots">
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-0" class="nav-link active"
+            ><span class="nav-tooltip">Início W1</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-1" class="nav-link"
+            ><span class="nav-tooltip">Capa</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-2" class="nav-link"
+            ><span class="nav-tooltip">Apresentação</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-3" class="nav-link"
+            ><span class="nav-tooltip">Institucional</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-4" class="nav-link"
+            ><span class="nav-tooltip">Objetivo</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-5" class="nav-link"
+            ><span class="nav-tooltip">Riscos</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-6" class="nav-link"
+            ><span class="nav-tooltip">Riscos Atuais</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-8" class="nav-link"
+            ><span class="nav-tooltip">Proposta W1</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-9" class="nav-link"
+            ><span class="nav-tooltip">Papel W1 Consultoria</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-9b" class="nav-link"
+            ><span class="nav-tooltip">Papel W1 Business</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-10" class="nav-link"
+            ><span class="nav-tooltip">Estrutura S.A.</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-13" class="nav-link"
+            ><span class="nav-tooltip">Benefícios</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-14" class="nav-link"
+            ><span class="nav-tooltip">Benefícios S.A.</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-15" class="nav-link"
+            ><span class="nav-tooltip">Execução</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-16" class="nav-link"
+            ><span class="nav-tooltip">Cronograma</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-23" class="nav-link"
+            ><span class="nav-tooltip">Entregas</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-24" class="nav-link"
+            ><span class="nav-tooltip">Entregáveis</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-25" class="nav-link"
+            ><span class="nav-tooltip">Custo</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-26" class="nav-link"
+            ><span class="nav-tooltip">Investimento</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-27" class="nav-link"
+            ><span class="nav-tooltip">Invest. à Vista</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-28" class="nav-link"
+            ><span class="nav-tooltip">Ação</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-29" class="nav-link"
+            ><span class="nav-tooltip">Próximos Passos</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-29b" class="nav-link"
+            ><span class="nav-tooltip">Passos Imediatos</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-29c" class="nav-link"
+            ><span class="nav-tooltip">Início Trabalhos</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-30" class="nav-link"
+            ><span class="nav-tooltip">Fim</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-31" class="nav-link"
+            ><span class="nav-tooltip">Obrigado</span></a
+          >
+        </li>
+        <li class="nav-dot">
+          <a href="#kamby-final-slide-32" class="nav-link"
+            ><span class="nav-tooltip">Fim W1</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <section id="kamby-final-slide-0" class="logo-only-slide">
+      <div class="container">
+        <img src="https://i.postimg.cc/MKD8hCs3/logo-w1.png" alt="W1 Logo" />
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-1" class="capa-section">
+      <div class="capa-content">
+        <div class="logo-container-capa">
+          <div class="logo-shape-capa">
+            <div class="logo-text-capa">W<span>1</span></div>
+          </div>
+        </div>
+        <h1 class="capa-slide-title">
+          PLANEJAMENTO ESTRATÉGICO <br />
+          <span class="highlight">KAMBY S.A.</span>
+        </h1>
+        <p class="capa-details">Maio de 2025</p>
+      </div>
+      <div class="scroll-indicator-capa">
+        <div class="mouse-capa"><div class="mouse-wheel-capa"></div></div>
+        <span class="scroll-text-capa">Explore</span>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-2" class="sectional-cover-slide">
+      <div class="container">
+        <div class="kamby-logo-container">
+          <img
+            src="https://i.postimg.cc/T1zyTYDM/Logo-Oficial-Grupo-Kamby.png"
+            alt="Logo Kamby"
+            class="kamby-logo-image"
+          />
+          <p class="kamby-company-name">
+            Indústria e Comércio de Rações Kamby Ltda.
+          </p>
+        </div>
+        <h1 class="sectional-cover-title">APRESENTAÇÃO E OBJETIVOS</h1>
+      </div>
+    </section>
+
+    <section
+      id="kamby-final-slide-3"
+      class="list-section-content light-section"
+    >
+      <div class="container">
+        <h2 class="section-title on-light-bg">
+          Apresentação Institucional – RAÇÕES KAMBY
+        </h2>
+        <div class="institutional-content-wrapper">
+          <div class="institutional-text-content">
+            <p class="intro-paragraph">
+              A Indústria e Comércio de Rações Kamby Ltda., fundada em 2009 em
+              Araújos/MG, atua há mais de 15 anos no agronegócio fabricando
+              rações, comercializando insumos agrícolas, equipamentos e serviços
+              logísticos.
+            </p>
+            <p class="intro-paragraph">
+              Com duas filiais em Minas Gerais e receita operacional líquida de
+              R$ 26,5 milhões em 2024, a empresa mantém patrimônio líquido
+              superior a R$ 2,6 milhões e forte presença regional junto ao
+              produtor rural, demonstrando resiliência operacional mesmo diante
+              dos desafios econômicos.
+            </p>
+            <p class="intro-paragraph">
+              A Kamby inicia agora sua transformação para Sociedade Anônima de
+              Capital Fechado, modernizando a gestão através da implantação de
+              governança corporativa e criação de mecanismos para proteção
+              patrimonial e crescimento sustentável.
+            </p>
+            <p class="intro-paragraph">
+              Como parte desse reposicionamento estratégico, será implementado o
+              programa de vesting e partnership, tendo como primeiro
+              beneficiário o Sr. Rodrigo Rigolon, além da estruturação de um
+              plano sucessório robusto que garanta a continuidade operacional,
+              organização da herança e perpetuidade do negócio familiar para as
+              próximas gerações.
+            </p>
+          </div>
+          <div class="institutional-logo-column">
+            <img
+              src="https://i.postimg.cc/RFBFqbPy/logo-kamby.png"
+              alt="Logo Kamby"
+              class="kamby-rectangular-logo"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-4" class="list-section-content">
+      <div class="container">
+        <h2 class="section-title">Objetivo do Projeto</h2>
+        <ul>
+          <li>
+            <span
+              >Transformar a "Indústria e Comércio de Rações Kamby Ltda." em uma
+              Sociedade Anônima (S.A.) de Capital Fechado, servindo como holding
+              operacional e patrimonial, modernizando a gestão e facilitando
+              futura captação de investimentos.</span
+            >
+          </li>
+          <li>
+            <span
+              >Implementar Mecanismos de Proteção Patrimonial, segregando o
+              patrimônio dos sócios do risco empresarial e otimizando a gestão
+              de ativos/passivos na S.A.</span
+            >
+          </li>
+          <li>
+            <span
+              >Desenvolver e Implementar um Sistema de Governança Corporativa,
+              com conselhos (Conselho de Administração, se aplicável), políticas
+              claras e processos transparentes para melhorar a prestação de
+              contas e eficiência.</span
+            >
+          </li>
+          <li>
+            <span
+              >Estruturar e Efetivar o Programa de Vesting e Partnership para
+              reter e motivar colaboradores chave (foco inicial: Sr. Rodrigo
+              Rigolon), alinhando interesses com o sucesso da empresa.</span
+            >
+          </li>
+          <li>
+            <span
+              >Preparar a Empresa para a Sucessão, com um plano claro para
+              transições planejadas e imprevistas, garantindo a continuidade e o
+              legado da Kamby.</span
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-5" class="sectional-cover-slide">
+      <div class="container">
+        <div class="kamby-logo-container">
+          <img
+            src="https://i.postimg.cc/T1zyTYDM/Logo-Oficial-Grupo-Kamby.png"
+            alt="Logo Kamby"
+            class="kamby-logo-image"
+          />
+          <p class="kamby-company-name">
+            Indústria e Comércio de Rações Kamby Ltda.
+          </p>
+        </div>
+        <h1 class="sectional-cover-title">DIAGNÓSTICO DE RISCOS</h1>
+      </div>
+    </section>
+
+    <section
+      id="kamby-final-slide-6"
+      class="list-section-content light-section"
+    >
+      <div class="container">
+        <h2 class="section-title on-light-bg">
+          Riscos da Estrutura Atual (LTDA)
+        </h2>
+        <p class="intro-paragraph centered">
+          Manter a estrutura de Sociedade Limitada (LTDA) sem um planejamento
+          patrimonial e de governança adequados expõe a Kamby e seus sócios a
+          diversos riscos significativos que podem comprometer o patrimônio, a
+          continuidade do negócio e a harmonia familiar. A seguir, destacamos os
+          principais pontos de vulnerabilidade:
+        </p>
+        <ul style="max-width: 900px">
+          <li>
+            <span
+              ><strong>Confusão Patrimonial:</strong> A linha tênue entre os
+              bens da empresa e o patrimônio pessoal dos sócios pode levar à
+              responsabilização pessoal por dívidas empresariais, resultando em
+              perdas financeiras significativas para a família.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Vulnerabilidade a Litígios:</strong> Sem a blindagem de
+              uma S.A. e acordos claros, o patrimônio dos sócios fica mais
+              exposto em ações trabalhistas, cíveis ou fiscais contra a
+              empresa.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Conflitos e Ineficiência na Gestão:</strong> A ausência
+              de regras formais de governança, tomada de decisão e,
+              especialmente, de um plano sucessório, pode gerar conflitos entre
+              sócios e herdeiros, paralisia administrativa e desvalorização da
+              empresa.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Dificuldade de Retenção de Talentos:</strong> A falta de
+              mecanismos como o vesting dificulta o engajamento e a retenção de
+              profissionais chave, impactando a inovação e a
+              competitividade.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Restrições para Crescimento:</strong> A estrutura de LTDA
+              é menos flexível para atrair investidores estratégicos, captar
+              recursos no mercado ou realizar operações societárias complexas,
+              limitando o potencial de expansão.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Incertezas na Sucessão:</strong> A falta de um plano
+              sucessório claro e juridicamente embasado pode levar à
+              descontinuidade dos negócios, disputas familiares prolongadas e
+              perda do legado construído.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Ineficiências Fiscais:</strong> Manter a estrutura atual
+              pode significar o não aproveitamento de otimizações fiscais
+              possíveis em uma S.A., especialmente em relação à tributação de
+              lucros, aluguéis e na sucessão patrimonial.</span
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-8" class="sectional-cover-slide">
+      <div class="container">
+        <div class="kamby-logo-container">
+          <img
+            src="https://i.postimg.cc/T1zyTYDM/Logo-Oficial-Grupo-Kamby.png"
+            alt="Logo Kamby"
+            class="kamby-logo-image"
+          />
+          <p class="kamby-company-name">
+            Indústria e Comércio de Rações Kamby Ltda.
+          </p>
+        </div>
+        <h1 class="sectional-cover-title">PROPOSTA ESTRATÉGICA W1</h1>
+      </div>
+    </section>
+
+    <section
+      id="kamby-final-slide-9"
+      class="list-section-content light-gray-section"
+    >
+      <div class="container">
+        <h2 class="section-title on-light-bg">O Papel da W1 Consultoria</h2>
+        <p class="intro-paragraph">
+          A W1 Consultoria Patrimonial será sua parceira estratégica nesta
+          jornada de transformação. Nossa abordagem é eminentemente societária,
+          com foco primordial na proteção patrimonial e na perenidade do
+          negócio.
+        </p>
+        <ul>
+          <li>
+            <span
+              ><strong>Expertise Especializada:</strong> Oferecemos conhecimento
+              aprofundado em direito societário, governança corporativa e
+              planejamento sucessório, garantindo que todas as etapas sejam
+              executadas com excelência.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Coordenação Integral:</strong> Atuaremos na coordenação
+              de todo o processo, desde a concepção da estrutura até a sua
+              formalização, interface com órgãos reguladores (JUCEMG, Receita
+              Federal) e demais profissionais envolvidos.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Proteção Patrimonial Integrada:</strong> Nossa premissa é
+              construir uma estrutura que não só otimize o negócio, mas que
+              também resguarde o patrimônio pessoal dos sócios e da
+              família.</span
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section
+      id="kamby-final-slide-9b"
+      class="list-section-content light-gray-section"
+    >
+      <div class="container">
+        <h2 class="section-title on-light-bg">O Papel da W1 Business</h2>
+        <p class="intro-paragraph">
+          Paralelamente, a W1 Business conduzirá o Valuation da empresa. O
+          valuation é fundamental para:
+        </p>
+        <ul>
+          <li>
+            <span
+              ><strong>Determinar o Valor Justo:</strong> Atribuir um valor
+              justo à Kamby LTDA antes da transformação, base para a conversão
+              de quotas em ações e entrada de novos acionistas (ex:
+              vesting).</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Negociação Transparente:</strong> Fornecer um valor de
+              referência objetivo para futuras transações de ações, incluindo
+              programas de incentivo.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Tomada de Decisão Estratégica:</strong> Oferecer uma
+              visão clara sobre o valor da empresa, subsidiando decisões de
+              investimento, crescimento e aquisição.</span
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-10" class="light-gray-section">
+      <div class="container">
+        <h2 class="section-title on-light-bg">
+          Visão Geral da Estrutura Kamby S.A.
+        </h2>
+        <div class="organogram-container">
+          <div class="level">
+            <div class="node sa-node" id="kambySA-societario-fs10">
+              <h4>KAMBY S.A.</h4>
+              <p>(Sociedade Anônima de Capital Fechado)</p>
+              <p class="cnpj-text">CNPJ: 10.860.149/0001-02 (Transformada)</p>
+            </div>
+          </div>
+          <div class="connector vertical-medium"></div>
+          <div class="structure-group">
+            <div class="column governance-section">
+              <h3 class="column-title">Governança</h3>
+              <div
+                class="node governance-assembly"
+                id="assembleia-societario-fs10"
+              >
+                <h4>Assembleia Geral</h4>
+                <p>Órgão Soberano</p>
+              </div>
+              <div class="connector vertical-short"></div>
+              <div
+                class="node governance-board"
+                id="conselhoAdmin-societario-fs10"
+              >
+                <h4>Conselho de Administração</h4>
+                <p>Diretrizes Estratégicas</p>
+              </div>
+              <div class="connector vertical-short"></div>
+              <div class="node diretoria" id="diretoria-societario-fs10">
+                <h4>Diretoria Executiva</h4>
+                <p>Gestão Operacional</p>
+              </div>
+            </div>
+            <div class="column shareholders-section">
+              <h3 class="column-title">Acionistas</h3>
+              <div
+                class="node shareholders-group"
+                id="acionistas-societario-fs10"
+              >
+                <h4>Acionistas Fundadores</h4>
+                <ul>
+                  <li>Adauto Aquino</li>
+                  <li>Ademir Silva</li>
+                  <li>Orlando José da Silva</li>
+                  <li>Flávia Maria da Costa</li>
+                </ul>
+                <p class="info-text">Regidos por Acordo de Acionistas.</p>
+              </div>
+            </div>
+            <div class="column vesting-section">
+              <h3 class="column-title">Incentivos</h3>
+              <div class="node vesting-group" id="vesting-societario-fs10">
+                <h4>Programa de Vesting</h4>
+                <p>Incentivo de Longo Prazo</p>
+                <ul>
+                  <li><strong>Participante Chave:</strong></li>
+                  <li>Sr. Rodrigo Rigolon</li>
+                  <li><strong>Outros Futuros:</strong></li>
+                  <li>(Conforme Política S.A.)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-13" class="sectional-cover-slide">
+      <div class="container">
+        <div class="kamby-logo-container">
+          <img
+            src="https://i.postimg.cc/T1zyTYDM/Logo-Oficial-Grupo-Kamby.png"
+            alt="Logo Kamby"
+            class="kamby-logo-image"
+          />
+          <p class="kamby-company-name">
+            Indústria e Comércio de Rações Kamby Ltda.
+          </p>
+        </div>
+        <h1 class="sectional-cover-title">BENEFÍCIOS DA TRANSFORMAÇÃO</h1>
+      </div>
+    </section>
+
+    <section
+      id="kamby-final-slide-14"
+      class="list-section-content light-section"
+    >
+      <div class="container">
+        <h2 class="section-title on-light-bg">
+          Benefícios da Nova Estrutura S.A.
+        </h2>
+        <p class="intro-paragraph centered">
+          A transformação da Kamby Ltda. em S.A. de Capital Fechado trará os
+          seguintes benefícios principais:
+        </p>
+        <ul>
+          <li>
+            <span
+              ><strong>Proteção Patrimonial Reforçada:</strong> Maior distinção
+              entre patrimônio da empresa e dos acionistas (responsabilidade
+              limitada às ações).</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Estrutura de Governança Mais Sofisticada:</strong>
+              Facilita implementação de conselhos e políticas formais,
+              promovendo profissionalismo.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Flexibilidade na Captação de Recursos:</strong> Estrutura
+              mais apta a receber investimentos futuros (equity,
+              debêntures).</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Facilidade na Transferência de Participações:</strong>
+              Ações são mais facilmente transferíveis, simplificando herança,
+              sucessão e vesting.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Atração e Retenção de Talentos:</strong> Permite planos
+              de opção de compra de ações (stock options) estruturados.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Credibilidade de Mercado:</strong> Imagem de maior
+              solidez e organização para bancos, fornecedores e clientes.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Planejamento Sucessório Eficaz:</strong> Permite
+              diferentes classes de ações, facilitando organização da sucessão e
+              controle.</span
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-15" class="sectional-cover-slide">
+      <div class="container">
+        <div class="kamby-logo-container">
+          <img
+            src="https://i.postimg.cc/T1zyTYDM/Logo-Oficial-Grupo-Kamby.png"
+            alt="Logo Kamby"
+            class="kamby-logo-image"
+          />
+          <p class="kamby-company-name">
+            Indústria e Comércio de Rações Kamby Ltda.
+          </p>
+        </div>
+        <h1 class="sectional-cover-title">PLANO DE EXECUÇÃO</h1>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-16" class="light-gray-section">
+      <div class="container">
+        <h2 class="section-title on-light-bg">Cronograma Visual do Projeto</h2>
+        <div class="gantt-chart-wrapper">
+          <div class="gantt-container-inner">
+            <div class="gantt-header">
+              <div class="header-task">Entregável Principal / Serviço</div>
+              <div>Fase 1</div>
+              <div>Fase 2</div>
+              <div>Fase 3</div>
+              <div>Fase 4</div>
+              <div>Fase 5</div>
+              <div>Ano 1</div>
+              <div>Ano 2</div>
+              <div>Ano 3</div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-task-name">
+                Relatório de Diagnóstico e Recomendações
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-phase-1"></div>
+                </div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-task-name">Estatuto Social da S.A.</div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-phase-2"></div>
+                </div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-phase-3"></div>
+                </div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-task-name">Atas e Documentos de Registro</div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-phase-2"></div>
+                </div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-phase-3"></div>
+                </div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-task-name">
+                Kamby S.A. Constituída e Operacional
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-phase-3"></div>
+                </div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-task-name">Acordo de Acionistas</div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-phase-3"></div>
+                </div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-task-name">
+                Governança Corporativa Implantada
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-phase-3"></div>
+                </div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-task-name">Programa de Vesting Desenhado</div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-phase-4"></div>
+                </div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-task-name">Plano de Sucessão Documentado</div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-phase-5"></div>
+                </div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-task-name">
+                Consultoria Patrimonial Contínua (Fase 6)
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container"></div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-ongoing-support"></div>
+                </div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-ongoing-support"></div>
+                </div>
+              </div>
+              <div class="gantt-phase-cell">
+                <div class="gantt-bar-container">
+                  <div class="gantt-bar bar-ongoing-support"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-23" class="sectional-cover-slide">
+      <div class="container">
+        <div class="kamby-logo-container">
+          <img
+            src="https://i.postimg.cc/T1zyTYDM/Logo-Oficial-Grupo-Kamby.png"
+            alt="Logo Kamby"
+            class="kamby-logo-image"
+          />
+          <p class="kamby-company-name">
+            Indústria e Comércio de Rações Kamby Ltda.
+          </p>
+        </div>
+        <h1 class="sectional-cover-title">ENTREGÁVEIS</h1>
+      </div>
+    </section>
+
+    <section
+      id="kamby-final-slide-24"
+      class="list-section-content light-gray-section"
+    >
+      <div class="container">
+        <h2 class="section-title on-light-bg">
+          Principais Entregáveis do Projeto
+        </h2>
+        <p class="intro-paragraph centered">
+          Ao final das fases principais do projeto (Fases 1 a 5), a Kamby terá:
+        </p>
+        <ul>
+          <li>
+            <span
+              ><strong
+                >Indústria e Comércio de Rações Kamby S.A. (de Capital
+                Fechado)</strong
+              >
+              formalmente constituída e operacional, com CNPJ e demais registros
+              atualizados.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Estatuto Social da S.A.</strong> moderno e alinhado com
+              os objetivos do projeto.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Acordo de Acionistas</strong> abrangente, regulando as
+              relações e protegendo os interesses dos sócios.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong
+                >Estrutura de Governança Corporativa inicial implantada</strong
+              >
+              (Diretoria e, se aplicável, Conselho de Administração com
+              Regimento Interno).</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Programa de Vesting e Partnership</strong> desenhado e
+              juridicamente instrumentado, pronto para implementação com o Sr.
+              Rodrigo Rigolon e futuros participantes.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Plano de Sucessão documentado,</strong> com estratégias
+              claras para a perpetuidade da empresa.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Relatório de Diagnóstico e Recomendações</strong> para
+              proteção patrimonial.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Atas e documentos de registro</strong> pertinentes a
+              todas as etapas da transformação.</span
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-25" class="sectional-cover-slide">
+      <div class="container">
+        <div class="kamby-logo-container">
+          <img
+            src="https://i.postimg.cc/T1zyTYDM/Logo-Oficial-Grupo-Kamby.png"
+            alt="Logo Kamby"
+            class="kamby-logo-image"
+          />
+          <p class="kamby-company-name">
+            Indústria e Comércio de Rações Kamby Ltda.
+          </p>
+        </div>
+        <h1 class="sectional-cover-title">INVESTIMENTO</h1>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-26">
+      <div class="container">
+        <h2 class="section-title">Investimento Parcelado</h2>
+        <p class="investment-subtitle">
+          Personalizado para a Família e Grupo Kamby
+        </p>
+        <p class="payment-method-title">
+          Opções de Pagamento via Cartão de Crédito
+        </p>
+        <div class="investment-table-wrapper">
+          <table class="investment-table">
+            <thead>
+              <tr>
+                <th>Parcelamento</th>
+                <th>Valor da Parcela</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>12x</td>
+                <td>R$ 5.572,50</td>
+              </tr>
+              <tr>
+                <td>9x</td>
+                <td>R$ 7.276,67</td>
+              </tr>
+              <tr>
+                <td>6x</td>
+                <td>R$ 10.655,00</td>
+              </tr>
+              <tr>
+                <td>3x</td>
+                <td>R$ 20.904,00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-27">
+      <div class="container">
+        <h2 class="section-title">Investimento à Vista</h2>
+        <p class="investment-subtitle">
+          Condição Especial para Família e Grupo Kamby
+        </p>
+        <div class="investment-card-vista">
+          <h5>Investimento à Vista (Pix ou Boleto)</h5>
+          <span class="price">R$ 60.000,00</span>
+        </div>
+        <p
+          class="list-section-content intro-paragraph centered"
+          style="
+            font-size: 0.9rem;
+            margin-top: 30px;
+            color: var(--text-light-secondary);
+          "
+        >
+          Esta opção oferece um valor diferenciado para pagamento único,
+          agilizando o início dos trabalhos e a concretização dos benefícios da
+          reestruturação.
+        </p>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-28" class="sectional-cover-slide">
+      <div class="container">
+        <div class="kamby-logo-container">
+          <img
+            src="https://i.postimg.cc/T1zyTYDM/Logo-Oficial-Grupo-Kamby.png"
+            alt="Logo Kamby"
+            class="kamby-logo-image"
+          />
+          <p class="kamby-company-name">
+            Indústria e Comércio de Rações Kamby Ltda.
+          </p>
+        </div>
+        <h1 class="sectional-cover-title">PRÓXIMOS PASSOS</h1>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-29" class="list-section-content">
+      <div class="container">
+        <h2 class="section-title">Próximos Passos</h2>
+        <p
+          class="intro-paragraph centered"
+          style="color: var(--text-light-primary); max-width: 850px"
+        >
+          A transformação da INDÚSTRIA E COMÉRCIO DE RAÇÕES KAMBY LTDA em uma
+          S.A. de Capital Fechado, com a implementação de governança corporativa
+          e programas de incentivo, é um investimento estratégico no futuro da
+          sua empresa. A W1 Consultoria Patrimonial está pronta para guiar você
+          nessa jornada.
+        </p>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-29b" class="list-section-content">
+      <div class="container">
+        <h2 class="section-title">Próximos Passos Imediatos</h2>
+        <ul style="max-width: 700px; margin-top: 20px">
+          <li>
+            <span
+              >Enviar Informações Pessoais (para qualificação dos
+              sócios/acionistas).</span
+            >
+          </li>
+          <li>
+            <span>Confecção do Contrato de Prestação de Serviços W1.</span>
+          </li>
+          <li>
+            <span
+              >Assinatura do Contrato (digitalmente, via plataforma
+              segura).</span
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-29c" class="list-section-content">
+      <div class="container">
+        <h2 class="section-title">Início dos Trabalhos</h2>
+        <p
+          class="intro-paragraph centered"
+          style="
+            margin-top: 20px;
+            font-weight: bold;
+            color: var(--text-light-primary);
+            max-width: 850px;
+          "
+        >
+          Com a assinatura do contrato, iniciaremos imediatamente as análises
+          detalhadas e a elaboração de todos os documentos societários
+          necessários para a transformação.
+        </p>
+        <p
+          class="intro-paragraph centered"
+          style="
+            margin-top: 30px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-light-primary);
+            max-width: 850px;
+          "
+        >
+          Convidamos você a dar este passo decisivo para a perenidade e
+          prosperidade da
+          <strong>INDÚSTRIA E COMÉRCIO DE RAÇÕES KAMBY S.A.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-30" class="sectional-cover-slide">
+      <div class="container">
+        <div class="kamby-logo-container">
+          <img
+            src="https://i.postimg.cc/T1zyTYDM/Logo-Oficial-Grupo-Kamby.png"
+            alt="Logo Kamby"
+            class="kamby-logo-image"
+          />
+          <p class="kamby-company-name">
+            Indústria e Comércio de Rações Kamby Ltda.
+          </p>
+        </div>
+        <h1 class="sectional-cover-title">ENCERRAMENTO</h1>
+      </div>
+    </section>
+
+    <section
+      id="kamby-final-slide-31"
+      style="background-color: var(--bg-dark-secondary)"
+    >
+      <div class="container">
+        <h2 class="section-title">Agradecimentos</h2>
+        <p class="final-message-text">
+          Empresas que se estruturam com visão de futuro não apenas protegem o
+          que construíram — elas garantem que o legado sobreviva ao tempo, com
+          segurança, clareza e paz para todas as gerações.
+        </p>
+      </div>
+    </section>
+
+    <section id="kamby-final-slide-32" class="logo-only-slide">
+      <div class="container">
+        <img src="https://i.postimg.cc/MKD8hCs3/logo-w1.png" alt="W1 Logo" />
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const capaTitleHighlight = document.querySelector(
+          "#kamby-final-slide-1 .capa-slide-title .highlight"
+        );
+        const titleElement = document.querySelector("title");
+
+        if (capaTitleHighlight) {
+          capaTitleHighlight.textContent = "KAMBY S.A.";
+        }
+        if (titleElement) {
+          document.title = `W1 Consultoria: Planejamento Estratégico – Kamby S.A.`;
+        }
+
+        const sections = document.querySelectorAll(
+          "section[id^='kamby-final-slide-']"
+        );
+        const navLinks = document.querySelectorAll(".navigation .nav-link");
+        const scrollIndicator = document.querySelector(
+          ".scroll-indicator-capa"
+        );
+
+        if (scrollIndicator) {
+          setTimeout(() => {
+            scrollIndicator.style.animation =
+              "fadeInCapaScrollIndicator 1s ease forwards";
+            scrollIndicator.style.opacity = "0.8";
+          }, 500);
+        }
+
+        if (sections.length > 0 && navLinks.length > 0) {
+          const sectionObserverOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.55, // When 55% of the section is visible
+          };
+
+          const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const currentSectionId = entry.target.id;
+                let isLightSection =
+                  entry.target.classList.contains("light-section") ||
+                  entry.target.classList.contains("light-gray-section");
+                let isCover =
+                  entry.target.classList.contains("sectional-cover-slide") ||
+                  entry.target.classList.contains("capa-section") ||
+                  entry.target.classList.contains("logo-only-slide");
+
+                navLinks.forEach((link) => {
+                  link.classList.remove("active");
+                  const linkHref = link.getAttribute("href").substring(1);
+                  if (linkHref === currentSectionId) {
+                    link.classList.add("active");
+                  }
+
+                  // Update dot colors based on the currently active section
+                  if (link.classList.contains("active")) {
+                    if (isLightSection && !isCover) {
+                      // Standard light section
+                      navLinks.forEach((nl) =>
+                        nl.classList.add("on-light-bg-dot")
+                      );
+                    } else {
+                      // Dark sections, covers, or logo-only slides
+                      navLinks.forEach((nl) =>
+                        nl.classList.remove("on-light-bg-dot")
+                      );
+                    }
+                  }
+                });
+              }
+            });
+          }, sectionObserverOptions);
+
+          sections.forEach((section) => {
+            sectionObserver.observe(section);
+          });
+
+          // Initial check for the very first slide's background to set nav dots color
+          // This logic might be simplified if the first slide is always dark (logo-only)
+          if (sections.length > 0) {
+            const firstSection = sections[0];
+            let firstIsLight =
+              firstSection.classList.contains("light-section") ||
+              firstSection.classList.contains("light-gray-section");
+            let firstIsCover =
+              firstSection.classList.contains("sectional-cover-slide") ||
+              firstSection.classList.contains("capa-section") ||
+              firstSection.classList.contains("logo-only-slide");
+
+            if (firstIsLight && !firstIsCover) {
+              navLinks.forEach((nl) => nl.classList.add("on-light-bg-dot"));
+            } else {
+              navLinks.forEach((nl) => nl.classList.remove("on-light-bg-dot"));
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
